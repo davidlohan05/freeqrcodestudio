@@ -1,3 +1,54 @@
-import './globals.css';import {site} from '@/config/site';import Header from '@/components/Header';import Footer from '@/components/Footer';
-export const metadata={metadataBase:new URL(site.url),title:{default:'Free QR Code Generator | Free QR Code Studio',template:'%s'},description:site.description,openGraph:{title:'Free QR Code Studio',description:site.description,type:'website',images:['/og-image.png']},twitter:{card:'summary_large_image',title:'Free QR Code Studio',description:site.description,images:['/og-image.png']},icons:{icon:'/favicon.svg',apple:'/apple-touch-icon.png'}};
-export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body><Header/>{children}<Footer/></body></html>}
+import './globals.css';
+import { site } from '@/config/site';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+
+export const metadata = {
+  metadataBase: new URL(site.url),
+
+  title: {
+    default: 'Free QR Code Generator | Free QR Code Studio',
+    template: '%s',
+  },
+
+  description: site.description,
+
+  verification: {
+    google: 'QRWMR4jnBJs-5unlptpBaJoO8eXrZc35eerEpgLBNfY',
+  },
+
+  openGraph: {
+    title: 'Free QR Code Studio',
+    description: site.description,
+    type: 'website',
+    images: ['/og-image.png'],
+  },
+
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free QR Code Studio',
+    description: site.description,
+    images: ['/og-image.png'],
+  },
+
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/apple-touch-icon.png',
+  },
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>
+        <Header />
+        {children}
+        <Footer />
+      </body>
+    </html>
+  );
+}
